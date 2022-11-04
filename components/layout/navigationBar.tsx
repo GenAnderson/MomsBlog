@@ -18,10 +18,10 @@ function NavigationBar() {
         </div>
         <div className={styles.subNavContainer}>
           <li className={styles.navLink}>
-            <Link href="/Blogs">Blogs</Link>
+            <Link href="/blogs">Blogs</Link>
           </li>
           <li className={styles.navLink}>
-            <Link href="/Documents">Documents</Link>
+            <Link href="/documents">Documents</Link>
           </li>
         </div>
       </ul>
