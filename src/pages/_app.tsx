@@ -6,7 +6,6 @@ import type { AppType } from "next/app";
 import { trpc } from "../utils/trpc";
 
 import Layout from "../../components/layout/layout";
-import Home from ".";
 
 const MyApp: AppType<{ session: Session | null }> = ({
   Component,

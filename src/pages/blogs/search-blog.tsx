@@ -1,8 +1,9 @@
-import TEMPDATA from "../../tempData";
+import TEMPDATA from "../../../tempData";
+import Link from "next/link";
 
-import styles from "./index.module.scss";
+import styles from "./blogs.module.scss";
 
-function BlogsPage() {
+function searchBlog() {
   return (
     <div className={styles.blogContainer}>
       <h1>Blog search</h1>
@@ -33,9 +34,15 @@ function BlogsPage() {
           <div>Description</div>
         </div>
         <div className={styles.searchResults__results}>
-          {TEMPDATA.map(({ title, category, description }) => (
+          {TEMPDATA.map(({ id, title, category, description }) => (
             <>
-              <div>{title}</div>
+              <Link
+                href={{
+                  pathname: `${id}`,
+                }}
+              >
+                {title}
+              </Link>
               <div>{category}</div>
               <div>{description}</div>
             </>
@@ -46,4 +53,4 @@ function BlogsPage() {
   );
 }
 
-export default BlogsPage;
+export default searchBlog;

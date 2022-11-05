@@ -1,29 +1,13 @@
-import {
-  Fragment,
-  JSXElementConstructor,
-  ReactElement,
-  ReactFragment,
-  ReactPortal,
-} from "react";
+import React, { Fragment } from "react";
 import NavigationBar from "./navigationBar";
 
-function Layout(
-  props:
-    | string
-    | number
-    | boolean
-    | ReactElement<any, string | JSXElementConstructor<any>>
-    | ReactFragment
-    | ReactPortal
-    | null
-    | undefined
-) {
+const Layout = ({ children }: React.PropsWithChildren) => {
   return (
     <Fragment>
       <NavigationBar />
-      <main>{props.children}</main>
+      <main>{children}</main>
     </Fragment>
   );
-}
+};
 
 export default Layout;

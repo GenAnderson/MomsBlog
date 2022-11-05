@@ -18,7 +18,7 @@ function NavigationBar() {
         </div>
         <div className={styles.subNavContainer}>
           <li className={styles.navLink}>
-            <Link href="/blogs">Blogs</Link>
+            <Link href="/blogs/search-blog">Blogs</Link>
           </li>
           <li className={styles.navLink}>
             <Link href="/documents">Documents</Link>

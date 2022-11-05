@@ -1,0 +1,83 @@
+@mixin flexDirectionColumn {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+}
+
+///////////////////SEARCH BLOG PAGE////////////////
+
+.blogContainer {
+  max-height: 100vh;
+  width: 100%;
+  font-size: 1.8rem;
+
+  @include flexDirectionColumn();
+
+  h1 {
+    font-size: 5rem;
+    font-family: "Poppins";
+  }
+}
+
+.searchContainer {
+  border-bottom: 0.1rem solid gray;
+  width: 100%;
+  @include flexDirectionColumn();
+
+  input {
+    font-size: 3rem;
+    margin: 2rem;
+  }
+}
+
+.searchResults {
+  padding: 5rem;
+  font-family: "Poppins";
+
+  &__subHeader {
+    margin: auto;
+    font-size: 2.8rem;
+    width: 100rem;
+    display: grid;
+    grid-template-columns: 1fr 1fr 2fr;
+    justify-items: center;
+
+    gap: 5rem;
+  }
+
+  &__results {
+    padding: 2rem;
+    width: 110rem;
+    display: grid;
+    grid-template-columns: 1fr 1fr 2fr;
+    justify-items: center;
+    gap: 1rem;
+  }
+}
+
+///////////////////CREATE BLOG PAGE////////////////
+.createBlogContainer {
+  padding: 5rem;
+}
+
+.createBlog {
+  &__form {
+    text-align: center;
+    input {
+      padding: 0.5rem;
+      font-size: 2rem;
+      margin: 1.5rem;
+    }
+  }
+  &__input__textArea {
+    width: 100rem;
+    height: 80rem;
+    font-size: 2rem;
+  }
+}
+
+///////////////////VIEW BLOG PAGE////////////////
+.viewBlogContainer {
+  font-size: 2rem;
+}
