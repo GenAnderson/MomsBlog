@@ -1,22 +1,33 @@
-import TEMPDATA from "../../../tempData";
 import Link from "next/link";
+import { Fragment } from "react";
+import { useState } from "react";
+
+import TEMPDATA, { uniqCategory } from "../../../tempData";
 
 import styles from "./blogs.module.scss";
 
 function searchBlog() {
+  const { state, setState } = useState();
+
+  const handleChange = (event: any) => {
+    console.log(event.target.value);
+
+    const searchString = event.target.value.toLowerCase();
+  };
   return (
     <div className={styles.blogContainer}>
       <h1>Blog search</h1>
       <div className={styles.searchContainer}>
         <form>
-          <label htmlFor="category"></label>
-          <input
-            type="text"
-            placeholder="Category"
-            id="category"
-            name="category"
-            className={styles.searchContainer__category}
-          />
+          <select onChange={handleChange}>
+            {uniqCategory.map((cat) => {
+              return (
+                <option key={cat} value={cat}>
+                  {cat}
+                </option>
+              );
+            })}
+          </select>
           <label htmlFor="Date"></label>
           <input
             type="date"
@@ -35,7 +46,7 @@ function searchBlog() {
         </div>
         <div className={styles.searchResults__results}>
           {TEMPDATA.map(({ id, title, category, description }) => (
-            <>
+            <Fragment key={id}>
               <Link
                 href={{
                   pathname: `${id}`,
@@ -43,9 +54,10 @@ function searchBlog() {
               >
                 {title}
               </Link>
+
               <div>{category}</div>
               <div>{description}</div>
-            </>
+            </Fragment>
           ))}
         </div>
       </div>

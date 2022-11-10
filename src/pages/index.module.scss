@@ -39,3 +39,13 @@
   height: 40vh;
   @include flexDirectionColumn();
 }
+
+///////////////////DOCUMENTS PAGE////////////////
+
+.underConstruction {
+  font-size: 6rem;
+  text-align: center;
+  padding: 20rem;
+  text-transform: uppercase;
+  font-weight: bold;
+}
