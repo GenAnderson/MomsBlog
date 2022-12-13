@@ -10,7 +10,7 @@ function ViewBlog() {
   const id = router.query.id;
   const event = getEventById(id);
 
-  const { title, description, category, date, text, image } = event;
+  const { title, category, date, text, image } = event;
 
   return (
     <div>
@@ -21,9 +21,6 @@ function ViewBlog() {
           <p>Category: {category}</p>
         </div>
         <div className={styles.viewBlog__body}>
-          <p className={styles.viewBlog__description}>
-            <em>Description: {description}</em>
-          </p>
           <img className={styles.image1} src={image}></img>
           <img className={styles.image2} src=""></img>
           <p className={styles.viewBlog__text}>{text}</p>

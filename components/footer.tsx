@@ -5,19 +5,21 @@ const Footer = function () {
     <>
       <div className={styles.footerContainer}>
         <div className={styles.footer__professionalInfo}>
-          <p>Professional Info here</p>
           <p>
-            Lorem ipsum, dolor sit amet consectetur adipisicing elit. <br />
-            Modi nam quaerat odit, doloremque est officiis tempora eveniet enim
-            beatae, <br />
-            nisi exercitationem rem minima ducimus cumque. <br />
-            Nobis, consectetur nulla.
+            <strong>Lujean Marshall, CSW</strong>
           </p>
+          <ul className={styles.footer__education}>
+            <li>
+              Master of Social Work Degree - University of Utah Graduate School
+              of Social Work.
+            </li>
+            <li>Bachelor of Social Work Degree - Brigham Young University</li>
+            <li>Associate Degree in Behavioral - Utah Valley University</li>
+          </ul>
         </div>
         <ul className={styles.footer__links}>
-          <li>Links? Lalalablaaaaaaaaaaaah</li>
-          <li>Links? Lalalablaaaaaaaaaaaah</li>
-          <li>Links? Lalalablaaaaaaaaaaaah</li>
+          <li>Latest blog →</li>
+          <li>About me</li>
           <li>Links? Lalalablaaaaaaaaaaaah</li>
           <li>Links? Lalalablaaaaaaaaaaaah</li>
           <li>Links? Lalalablaaaaaaaaaaaah</li>

@@ -17,6 +17,9 @@
   h1 {
     font-size: 5rem;
     font-family: "Poppins";
+    background-color: rgba(76, 167, 179, 0.459);
+    width: 100%;
+    text-align: center;
   }
 }
 
@@ -36,34 +39,6 @@
     font-size: 2rem;
     margin: 2rem;
     padding: 0.5rem 2rem;
-  }
-}
-
-.searchResults {
-  padding: 5rem;
-
-  &__subHeader {
-    margin: auto;
-    font-size: 2.8rem;
-    width: 120rem;
-    display: grid;
-    grid-template-columns: 2fr 1fr 2fr;
-    justify-items: left;
-    gap: 2rem;
-
-    :first-child {
-      padding-left: 2rem;
-    }
-  }
-
-  &__results {
-    padding: 2rem;
-    width: 120rem;
-    display: grid;
-    grid-template-columns: 2fr 1fr 2fr;
-    justify-items: left;
-    align-items: center;
-    gap: 2rem;
   }
 }
 

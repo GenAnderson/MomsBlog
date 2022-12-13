@@ -1,25 +1,64 @@
-import Link from "next/link";
+import { useState, useEffect } from "react";
 import { Fragment } from "react";
-import { useState } from "react";
+import Link from "next/link";
+import SearchResults from "../../../components/searchResults.component";
 
 import TEMPDATA, { uniqCategory } from "../../../tempData";
 
 import styles from "./blogs.module.scss";
 
 function searchBlog() {
-  const { state, setState } = useState();
+  const [selectCategoryState, setCategoryState] = useState("Category");
+  const [typeTitleState, setTitleState] = useState("");
+  const [blogData, setBlogData] = useState([]);
+  const [filteredBlog, setFilteredBlog] = useState(blogData);
 
-  const handleChange = (event: any) => {
-    console.log(event.target.value);
-
-    const searchString = event.target.value.toLowerCase();
+  const handleChangeCategory = (event: any) => {
+    const selectedCategoryList = event.target.value;
+    setCategoryState(selectedCategoryList);
   };
+
+  const handleChangeTitle = (event: any) => {
+    const searchTitle = event.target.value.toLocaleLowerCase();
+    setTitleState(searchTitle);
+  };
+
+  useEffect(() => setBlogData(TEMPDATA), []);
+
+  useEffect(() => {
+    const newFilteredCategory = blogData.filter((blog: any) => {
+      return blog.category.includes(selectCategoryState);
+    });
+
+    selectCategoryState === "Category"
+      ? setFilteredBlog(blogData)
+      : setFilteredBlog(newFilteredCategory);
+  }, [blogData, selectCategoryState]);
+
+  useEffect(() => {
+    const newFilteredTitle = blogData.filter((blog: any) => {
+      return blog.title.toLocaleLowerCase().includes(typeTitleState);
+    });
+
+    setFilteredBlog(newFilteredTitle);
+  }, [blogData, typeTitleState]);
+
   return (
     <div className={styles.blogContainer}>
       <h1>Blog search</h1>
       <div className={styles.searchContainer}>
         <form>
-          <select onChange={handleChange}>
+          <label htmlFor="title"></label>
+          <input
+            type="title"
+            placeholder="Title"
+            id="title"
+            name="title"
+            className={styles.searchContainer__date}
+            onChange={handleChangeTitle}
+          />
+          <select onChange={handleChangeCategory}>
+            <option>Category</option>
             {uniqCategory.map((cat) => {
               return (
                 <option key={cat} value={cat}>
@@ -28,39 +67,9 @@ function searchBlog() {
               );
             })}
           </select>
-          <label htmlFor="Date"></label>
-          <input
-            type="date"
-            placeholder="Date"
-            id="date"
-            name="date"
-            className={styles.searchContainer__date}
-          />
         </form>
       </div>
-      <div className={styles.searchResults}>
-        <div className={styles.searchResults__subHeader}>
-          <div>Blog Title</div>
-          <div>Category</div>
-          <div>Description</div>
-        </div>
-        <div className={styles.searchResults__results}>
-          {TEMPDATA.map(({ id, title, category, description }) => (
-            <Fragment key={id}>
-              <Link
-                href={{
-                  pathname: `${id}`,
-                }}
-              >
-                {title}
-              </Link>
-
-              <div>{category}</div>
-              <div>{description}</div>
-            </Fragment>
-          ))}
-        </div>
-      </div>
+      <SearchResults blogData={filteredBlog} />
     </div>
   );
 }

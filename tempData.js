@@ -13,7 +13,7 @@ const TEMPDATA = [
     id: 2,
     title: "Why do that?",
     date: "August 1, 1999",
-    category: "black",
+    category: "Black",
     description:
       "Learn JavaScript and other web development technology concepts through easy-to-understand explanations written in plain English.",
   },
@@ -37,7 +37,7 @@ const TEMPDATA = [
     id: 5,
     title: "Get a Unique List of Objects in an Array of Object in JavaScript",
     date: "March 17, 2003",
-    category: "purple",
+    category: "Purple",
     description: "Blah don't know what to put here but lalalalalala",
     text: "Recently, I needed a way to ensure that my JavaScript array of objects does not contain any duplicate objects based on an ‘id’ key. While I do enjoy more common approaches to this solution with the use of a simple ‘for’ loop it is always a bit of fun to see how folks have come up with modern solutions.",
     image:
