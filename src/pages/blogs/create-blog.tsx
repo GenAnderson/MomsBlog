@@ -1,7 +1,14 @@
 import styles from "./blogs.module.scss";
 
-
 function createBlog() {
+  let curr = new Date();
+  curr.setDate(curr.getDate());
+  let date = curr.toISOString().substring(0, 10);
+
+  const handleDateClick = function (event: any) {
+    console.log(event.target.value);
+  };
+
   return (
     <div className={styles.createBlogContainer}>
       <div className={styles.createBlog__form}>
@@ -40,6 +47,8 @@ function createBlog() {
               id="blogDate"
               name="blogDate"
               className={styles.createBlog__input}
+              defaultValue={date}
+              onClick={handleDateClick}
             />
             <label htmlFor="blogCategory"></label>
             <input

@@ -8,11 +8,7 @@ function NavigationBar() {
         <div className={styles.logoContainer}>
           <li className={styles.navLink}>
             <Link href="/">
-              <img
-                src="/images/logo.png"
-                alt="default logo"
-                className={styles.logo}
-              />
+              <img src="logo.png" alt="default logo" className={styles.logo} />
             </Link>
           </li>
         </div>
@@ -22,6 +18,9 @@ function NavigationBar() {
           </li>
           <li className={styles.navLink}>
             <Link href="/documents">Documents</Link>
+          </li>
+          <li className={styles.navLink}>
+            <Link href="/inspiration">Inspiration</Link>
           </li>
         </div>
       </ul>
