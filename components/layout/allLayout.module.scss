@@ -1,6 +1,6 @@
 .navContainer {
   width: 100%;
-  text-transform: uppercase;
+  // text-transform: uppercase;
   font-family: inherit;
   display: flex;
   justify-content: space-between;
@@ -10,13 +10,10 @@
   background-color: white;
   border-bottom: 0.2rem solid rgb(37, 37, 37);
 
-  // background-image: linear-gradient(to right, white, rgba(19, 25, 63, 0.904));
-  // height: 8rem;
   position: fixed;
   top: 0;
   z-index: 100;
   margin-top: 0;
-  // margin: 0;
 
   .navLink {
     list-style: none;
@@ -26,8 +23,9 @@
     align-items: center;
   }
   .logo {
-    width: 4rem;
+    width: 5rem;
     cursor: pointer;
+    background-color: white;
   }
 
   .subNavContainer {

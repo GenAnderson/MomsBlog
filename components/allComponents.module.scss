@@ -5,6 +5,24 @@
   justify-content: center;
 }
 
+////////////HERO SLIDER///////////
+
+.slideContainer {
+  width: 100%;
+  height: 100%;
+  transition: ease 2s;
+}
+
+.welcome__slide {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  position: absolute;
+  top: 0;
+  left: 0;
+  transition: ease 2s;
+}
+
 ////////////FOOTER///////////
 .footerContainer {
   font-size: 1.5rem;
