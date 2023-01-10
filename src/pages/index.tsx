@@ -22,15 +22,15 @@ const Home: NextPage = () => {
           <div className={styles.absoluteTextBox}>
             <div className={styles.welcome__textBox}>
               <h1 className={styles.company_name}>Cascade Counseling</h1>
-              <h2 className={styles.company_name_secondLine}>
-                For Personal Empowerment
-              </h2>
+              <p>
+                <em className={styles.company_name_secondLine}>
+                  For Personal Empowerment
+                </em>
+              </p>
               <p>
                 Lorem ipsum dolor sit amet consectetur adipisicing elit.
                 Voluptatem, ab nisi eos mollitia autem consequatur quod suscipit
                 inventore porro officia in dicta molestiae voluptatum. Dicta
-                similique tempora vel? Asperiores, et? Lorem ipsum dolor sit
-                amet consectetur adipisicing elit.
               </p>
               <button>
                 <a href={""} target="_blank" rel="noreferrer">
@@ -42,26 +42,28 @@ const Home: NextPage = () => {
           <HeroSlider />
         </div>
         <div className={styles.marketingContainer}>
-          <p>
-            Lorem ipsum dolor sit amet, consectetur adipisicing elit. Dolorum,
-            optio quod, deserunt laudantium iste tenetur et voluptas, vel totam
-            nobis quisquam! Alias autem delectus minus, sapiente elit. Eum ipsa
-            modi veniam magni corrupti consequatur soluta praesentium molestiae
-            omnis ratione nesciunt adipisci dicta hic est corporis sapiente,
-            veritatis fugiat eos?
-          </p>
-          <p>
-            Lorem ipsum dolor sit amet, consectetur adipisicing elit. Dolorum,
-            optio quod, deserunt laudantium iste tenetur et voluptas, vel totam
-            nobis quisquam! Alias autem delectus minus, sapiente id quos quae
-            voluptatem. Lorem ipsum dolor sit, amet consectetur adipisicing
-            elit. Eum ipsa modi veniam magni corrupti consequatur soluta
-            praesentium molestiae omnis ratione nesciunt adipisci dicta hic est
-            corporis sapiente, veritatis fugiat eos?
-          </p>
+          <div className={styles.marketingTextBox}>
+            <p>
+              Lorem ipsum dolor sit amet, consectetur adipisicing elit. Dolorum,
+              optio quod, deserunt laudantium iste tenetur et voluptas, vel
+              totam nobis quisquam! Alias autem delectus minus, sapiente elit.
+              Eum ipsa modi veniam magni corrupti consequatur soluta praesentium
+              molestiae omnis ratione nesciunt adipisci dicta hic est corporis
+              sapiente, veritatis fugiat eos?
+            </p>
+            <p>
+              Lorem ipsum dolor sit amet, consectetur adipisicing elit. Dolorum,
+              optio quod, deserunt laudantium iste tenetur et voluptas, vel
+              totam nobis quisquam! Alias autem delectus minus, sapiente id quos
+              quae voluptatem. Lorem ipsum dolor sit, amet consectetur
+              adipisicing elit. Eum ipsa modi veniam magni corrupti consequatur
+              soluta praesentium molestiae omnis ratione nesciunt adipisci dicta
+              hic est corporis sapiente, veritatis fugiat eos?
+            </p>
+          </div>
         </div>
+        <Footer />
       </div>
-      <Footer />
     </>
   );
 };

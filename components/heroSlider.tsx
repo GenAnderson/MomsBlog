@@ -3,7 +3,6 @@ import { useState, useEffect } from "react";
 import styles from "./allComponents.module.scss";
 
 const HeroSlider = function () {
-  // const [index, setIndex] = useState(0);
   const [slide, setSlide] = useState(0);
 
   const imagesCompiled = [
@@ -14,19 +13,19 @@ const HeroSlider = function () {
     "slide5.jpg",
   ];
 
-  const nextImageDelay = 3000;
+  useEffect(() => {
+    const timer = setInterval(
+      // () => setSlide((slide + 1) % imagesCompiled.length),
+      () => setSlide((oldSlide) => (oldSlide + 1) % imagesCompiled.length),
+      3000
+    );
 
-  // setInterval(nextSlide, nextImageDelay);
+    return () => {
+      clearInterval(timer);
+    };
+  }, []);
 
-  function nextSlide() {
-    if (slide > imagesCompiled.length) {
-      +setSlide(0);
-    } else {
-      +setSlide(+slide + 1);
-    }
-
-    console.log(slide);
-  }
+  console.log(slide);
 
   return (
     <div className={styles.slideContainer}>
