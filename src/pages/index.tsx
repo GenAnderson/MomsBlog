@@ -42,6 +42,19 @@ const Home: NextPage = () => {
           <HeroSlider />
         </div>
         <div className={styles.marketingContainer}>
+          <img src="./rose.png" className={styles.marketImg__1} />
+          <div className={styles.marketBoxMiniContainer}>
+            <div className={styles.marketBoxMini}>
+              Neighbor's dog is really loud. Don't know what to put in here
+              right now.
+            </div>
+            <div className={styles.marketBoxMini}>
+              It's irritating the living daylight out of me
+            </div>
+            <div className={styles.marketBoxMini}>
+              It's making Lou very anxious. blah blah blah
+            </div>
+          </div>
           <div className={styles.marketingTextBox}>
             <p>
               Lorem ipsum dolor sit amet, consectetur adipisicing elit. Dolorum,
@@ -61,6 +74,7 @@ const Home: NextPage = () => {
               hic est corporis sapiente, veritatis fugiat eos?
             </p>
           </div>
+          <img src="./rose.png" className={styles.marketImg__2} />
         </div>
         <Footer />
       </div>

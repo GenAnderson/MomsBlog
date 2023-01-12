@@ -5,9 +5,15 @@
   justify-content: center;
 }
 
+@mixin flexDirectionRegular {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
 ///////////////////HOME PAGE////////////////
 .homeContainer {
-  height: 94vh;
+  height: 100%;
   text-align: center;
   font-size: 1.8rem;
   position: relative;
@@ -21,8 +27,9 @@
   justify-items: center;
   overflow: hidden;
   position: relative;
-  width: 100%;
-  height: 50vh;
+  max-width: 100%;
+  height: 60rem;
+  box-shadow: 0.1rem 0.3rem 0.5rem gray;
 
   .welcome__textBox {
     color: white;
@@ -67,6 +74,21 @@
     border: none;
     border-radius: 1rem;
     z-index: 80;
+    position: relative;
+
+    :hover {
+      &::after {
+        content: "Latest Blog →";
+        position: absolute;
+        top: 0;
+        left: 0;
+        transition: ease 2s;
+        background-color: rgb(44, 48, 117);
+        padding: 1rem 2rem;
+        border: none;
+        border-radius: 1rem;
+      }
+    }
   }
 }
 
@@ -80,18 +102,65 @@
 
 .marketingContainer {
   width: 100%;
-  height: 100vh;
-
+  height: 140rem;
   margin: auto;
   @include flexDirectionColumn();
+  justify-content: flex-end;
+  position: relative;
+  overflow: hidden;
+
+  &::after {
+    content: " ";
+    position: absolute;
+    z-index: -1;
+    width: 100%;
+    height: 100%;
+    background-image: url("https://img.freepik.com/free-vector/smooth-white-wave-background_52683-55288.jpg?w=1800&t=st=1673484906~exp=1673485506~hmac=9692454028c709a679246653df0819610e239809e6c495d198cc463ef93daa2a");
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: cover;
+    opacity: 30%;
+  }
 }
 
 .marketingTextBox {
   padding: 10rem;
   max-width: 100rem;
-  border: solid gray 0.2rem;
+  // border: solid gray 0.2rem;
+  background-color: white;
+  z-index: 1;
+  box-shadow: 0.1rem 0.3rem 0.5rem gray;
 }
 
+.marketBoxMiniContainer {
+  @include flexDirectionRegular();
+  gap: 5rem;
+  padding: 10rem;
+}
+
+.marketBoxMini {
+  width: 40rem;
+  height: 10rem;
+  padding: 2rem;
+  background-color: white;
+  box-shadow: 0.1rem 0.3rem 0.5rem gray;
+}
+
+.marketImg {
+  z-index: -1;
+
+  &__1 {
+    max-width: 80rem;
+    transform: translate(-130%, -40%);
+    rotate: -180deg;
+    opacity: 30%;
+  }
+  &__2 {
+    max-width: 50rem;
+    transform: translate(-130%, -40%);
+    opacity: 30%;
+  }
+}
 ///////////////////DOCUMENTS PAGE////////////////
 
 .underConstruction {

@@ -1,8 +1,5 @@
 import { useState, useEffect } from "react";
-import { Fragment } from "react";
-import Link from "next/link";
 import SearchResults from "../../../components/searchResults.component";
-
 import TEMPDATA, { uniqCategory } from "../../../tempData";
 
 import styles from "./blogs.module.scss";
@@ -45,31 +42,38 @@ function searchBlog() {
 
   return (
     <div className={styles.blogContainer}>
-      <h1>Blog search</h1>
-      <div className={styles.searchContainer}>
-        <form>
-          <label htmlFor="title"></label>
-          <input
-            type="title"
-            placeholder="Title"
-            id="title"
-            name="title"
-            className={styles.searchContainer__date}
-            onChange={handleChangeTitle}
-          />
-          <select onChange={handleChangeCategory}>
-            <option>Category</option>
-            {uniqCategory.map((cat) => {
-              return (
-                <option key={cat} value={cat}>
-                  {cat}
-                </option>
-              );
-            })}
-          </select>
-        </form>
+      <div className={styles.blogSearchArea}>
+        <div>
+          <img src="../book.png" className={styles.blogSearchImage} />
+          <h1>Blog search</h1>
+        </div>
+        <div className={styles.searchContainer}>
+          <form>
+            <label htmlFor="title"></label>
+            <input
+              type="title"
+              placeholder="Title"
+              id="title"
+              name="title"
+              className={styles.searchContainer__date}
+              onChange={handleChangeTitle}
+            />
+            <select onChange={handleChangeCategory}>
+              <option>Category</option>
+              {uniqCategory.map((cat) => {
+                return (
+                  <option key={cat} value={cat}>
+                    {cat}
+                  </option>
+                );
+              })}
+            </select>
+          </form>
+        </div>
       </div>
-      <SearchResults blogData={filteredBlog} />
+      <div className={styles.searchResultsContainer}>
+        <SearchResults blogData={filteredBlog} />
+      </div>
     </div>
   );
 }

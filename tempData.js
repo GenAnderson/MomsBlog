@@ -56,6 +56,8 @@ const TEMPDATA = [
 
 export default TEMPDATA;
 
+//////////// HELPERS
+
 export function getEventById(id) {
   return TEMPDATA.find((event) => event.id === +id);
 }

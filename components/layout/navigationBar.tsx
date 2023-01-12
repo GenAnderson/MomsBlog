@@ -8,7 +8,11 @@ function NavigationBar() {
         <div className={styles.logoContainer}>
           <li className={styles.navLink}>
             <Link href="/">
-              <img src="logo.png" alt="default logo" className={styles.logo} />
+              <img
+                src="../logo.png"
+                alt="default logo"
+                className={styles.logo}
+              />
             </Link>
           </li>
         </div>
