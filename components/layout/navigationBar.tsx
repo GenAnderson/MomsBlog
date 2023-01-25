@@ -26,6 +26,9 @@ function NavigationBar() {
           <li className={styles.navLink}>
             <Link href="/inspiration">Inspiration</Link>
           </li>
+          <li className={styles.navLink}>
+            <Link href="/about">About</Link>
+          </li>
         </div>
       </ul>
     </div>

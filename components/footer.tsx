@@ -1,66 +1,70 @@
-import styles from "./allComponents.module.scss";
 import Link from "next/link";
-import { useState } from "react";
+import LoginBox from "./loginBox";
+import React, { useState } from "react";
+import { useRef } from "react";
 
+import emailjs from "@emailjs/browser";
+
+import styles from "./allComponents.module.scss";
 const Footer = function () {
   const [openLogin, setOpenLogin] = useState(false);
 
+  const form = useRef();
+
+  const sendEmail = (event: any) => {
+    event.preventDefault();
+
+    emailjs
+      .sendForm(
+        "service_7odam6k",
+        "template_f64gxgs",
+        form.current,
+        "f7ubLR15pkBC2Sece"
+      )
+      .then(
+        (result) => {
+          console.log(result.text);
+        },
+        (error) => {
+          console.log(error.text);
+        }
+      );
+  };
+
   return (
-    <>
-      <div className={styles.footerContainer}>
-        <div className={styles.gridContainer}>
-          <div className={styles.flexRegularContainer}>
-            <div className={styles.logoContainer}>
-              <img src="logoWhole.png" className={styles.footerLogo} />
-            </div>
-            <div className={styles.footer__professionalInfo}>
-              <p>
-                <strong>Lujean Marshall, CSW</strong>
-              </p>
-              <ul className={styles.footer__education}>
-                <li>
-                  Master of Social Work Degree - University of Utah Graduate
-                  School of Social Work
-                </li>
-                <li>
-                  Bachelor of Social Work Degree - Brigham Young University
-                </li>
-                <li>Associate Degree in Behavioral - Utah Valley University</li>
-              </ul>
-            </div>
-          </div>
-          <ul className={styles.footer__links}>
+    <div className={styles.footerContainer}>
+      <div className={styles.gridContainer}>
+        <div className={styles.logoContainer}>
+          <img src="logoWhole.png" className={styles.footerLogo} />
+        </div>
+        <div className={styles.footerFormContainer}>
+          <p className={styles.footerText}>
+            <strong>Questions or comments? Send us an email here!</strong>
+          </p>
+          <form ref={form} id={styles.contactForm} onSubmit={sendEmail}>
+            <span>
+              <input type="name" placeholder="Name" name="name"></input>
+              <input type="email" placeholder="Email" name="Email" />
+            </span>
+            <textarea name="message" placeholder="Type your message here" />
+            <input type="submit" value="Send" />
+          </form>
+        </div>
+        <ul className={styles.footer__links}>
+          <div className={styles.separateContainer}>
             <li>
               <Link href="">Latest blog →</Link>
             </li>
-            <li>About me</li>
+
             <div>
               <li onClick={() => setOpenLogin(!openLogin)}>Admin Login</li>
-              {openLogin && (
-                <div className={styles.loginBox}>
-                  <form>
-                    <input
-                      className="inputText"
-                      type="text"
-                      id="loginName"
-                      name="loginName"
-                      placeholder="Login Name"
-                    />
-                    <input
-                      className="inputText"
-                      type="text"
-                      id="loginPass"
-                      name="loginPass"
-                      placeholder="Password"
-                    />
-                  </form>
-                </div>
-              )}
+              <div>{openLogin && <LoginBox />}</div>
             </div>
-          </ul>
-        </div>
+          </div>
+          <p className={styles.copyright}>GenAnderson©️2023</p>
+        </ul>
       </div>
-    </>
+    </div>
   );
 };
 

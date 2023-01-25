@@ -15,7 +15,6 @@ const HeroSlider = function () {
 
   useEffect(() => {
     const timer = setInterval(
-      // () => setSlide((slide + 1) % imagesCompiled.length),
       () => setSlide((oldSlide) => (oldSlide + 1) % imagesCompiled.length),
       3000
     );
@@ -24,8 +23,6 @@ const HeroSlider = function () {
       clearInterval(timer);
     };
   }, []);
-
-  console.log(slide);
 
   return (
     <div className={styles.slideContainer}>

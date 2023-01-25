@@ -4,8 +4,10 @@ import { signIn, signOut, useSession } from "next-auth/react";
 import Head from "next/head";
 import Footer from "../../components/footer";
 import HeroSlider from "../../components/heroSlider";
+import Marketing from "../../components/marketing";
 
 import styles from "./index.module.scss";
+import { useInView } from "react-intersection-observer";
 
 const Home: NextPage = () => {
   const { data } = trpc.example.hello.useQuery({ text: "from tRPC" });
@@ -41,41 +43,7 @@ const Home: NextPage = () => {
           </div>
           <HeroSlider />
         </div>
-        <div className={styles.marketingContainer}>
-          <img src="./rose.png" className={styles.marketImg__1} />
-          <div className={styles.marketBoxMiniContainer}>
-            <div className={styles.marketBoxMini}>
-              Neighbor's dog is really loud. Don't know what to put in here
-              right now.
-            </div>
-            <div className={styles.marketBoxMini}>
-              It's irritating the living daylight out of me
-            </div>
-            <div className={styles.marketBoxMini}>
-              It's making Lou very anxious. blah blah blah
-            </div>
-          </div>
-          <div className={styles.marketingTextBox}>
-            <p>
-              Lorem ipsum dolor sit amet, consectetur adipisicing elit. Dolorum,
-              optio quod, deserunt laudantium iste tenetur et voluptas, vel
-              totam nobis quisquam! Alias autem delectus minus, sapiente elit.
-              Eum ipsa modi veniam magni corrupti consequatur soluta praesentium
-              molestiae omnis ratione nesciunt adipisci dicta hic est corporis
-              sapiente, veritatis fugiat eos?
-            </p>
-            <p>
-              Lorem ipsum dolor sit amet, consectetur adipisicing elit. Dolorum,
-              optio quod, deserunt laudantium iste tenetur et voluptas, vel
-              totam nobis quisquam! Alias autem delectus minus, sapiente id quos
-              quae voluptatem. Lorem ipsum dolor sit, amet consectetur
-              adipisicing elit. Eum ipsa modi veniam magni corrupti consequatur
-              soluta praesentium molestiae omnis ratione nesciunt adipisci dicta
-              hic est corporis sapiente, veritatis fugiat eos?
-            </p>
-          </div>
-          <img src="./rose.png" className={styles.marketImg__2} />
-        </div>
+        <Marketing />
         <Footer />
       </div>
     </>

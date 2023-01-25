@@ -28,7 +28,7 @@
   overflow: hidden;
   position: relative;
   max-width: 100%;
-  height: 60rem;
+  height: 50vh;
   box-shadow: 0.1rem 0.3rem 0.5rem gray;
 
   .welcome__textBox {
@@ -100,67 +100,6 @@
   z-index: 90;
 }
 
-.marketingContainer {
-  width: 100%;
-  height: 140rem;
-  margin: auto;
-  @include flexDirectionColumn();
-  justify-content: flex-end;
-  position: relative;
-  overflow: hidden;
-
-  &::after {
-    content: " ";
-    position: absolute;
-    z-index: -1;
-    width: 100%;
-    height: 100%;
-    background-image: url("https://img.freepik.com/free-vector/smooth-white-wave-background_52683-55288.jpg?w=1800&t=st=1673484906~exp=1673485506~hmac=9692454028c709a679246653df0819610e239809e6c495d198cc463ef93daa2a");
-    background-position: center;
-    background-repeat: no-repeat;
-    background-size: cover;
-    opacity: 30%;
-  }
-}
-
-.marketingTextBox {
-  padding: 10rem;
-  max-width: 100rem;
-  // border: solid gray 0.2rem;
-  background-color: white;
-  z-index: 1;
-  box-shadow: 0.1rem 0.3rem 0.5rem gray;
-}
-
-.marketBoxMiniContainer {
-  @include flexDirectionRegular();
-  gap: 5rem;
-  padding: 10rem;
-}
-
-.marketBoxMini {
-  width: 40rem;
-  height: 10rem;
-  padding: 2rem;
-  background-color: white;
-  box-shadow: 0.1rem 0.3rem 0.5rem gray;
-}
-
-.marketImg {
-  z-index: -1;
-
-  &__1 {
-    max-width: 80rem;
-    transform: translate(-130%, -40%);
-    rotate: -180deg;
-    opacity: 30%;
-  }
-  &__2 {
-    max-width: 50rem;
-    transform: translate(-130%, -40%);
-    opacity: 30%;
-  }
-}
 ///////////////////DOCUMENTS PAGE////////////////
 
 .underConstruction {
@@ -170,3 +109,63 @@
   text-transform: uppercase;
   font-weight: bold;
 }
+
+///////////////////ABOUT PAGE////////////////
+
+.aboutContainer {
+  max-width: 200rem;
+  padding: 10rem 5rem;
+  display: grid;
+  grid-template-columns: auto auto;
+  margin: auto;
+  font-size: 1.6rem;
+  background-color: rgb(207, 238, 243);
+}
+
+.aboutPhoto {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  grid-column: 1/2;
+  box-shadow: -0.1rem -0.2rem 1.5rem black;
+}
+
+.aboutTextBox {
+  grid-column: 2/3;
+  grid-row: 1/2;
+  display: grid;
+  grid-template-rows: auto auto auto auto;
+  padding: 2rem;
+  box-shadow: 0.1rem 0.2rem 1.5rem black;
+  z-index: 1;
+  background-color: rgba(240, 235, 235, 0.548);
+  gap: 0.5rem;
+
+  &__header {
+    font-size: 5rem;
+    font-weight: bold;
+    letter-spacing: 0.5rem;
+    animation: 0.5s ease 0.1s 1 slideInLeft;
+  }
+
+  @keyframes slideInLeft {
+    0% {
+      transform: translateX(50%);
+    }
+    100% {
+      transform: translateX(0%);
+    }
+  }
+
+  &__subheader {
+    font-size: 2rem;
+    font-weight: bold;
+    text-transform: uppercase;
+    animation: 0.5s ease 0.1s 1 slideInLeft;
+  }
+}
+
+// .shiftUp {
+//   transform: translateX(0rem);
+//   transition: 0.1s;
+// }
