@@ -1,9 +1,9 @@
-import TEMPDATA from "../tempData";
+import Result from "./displayResult.component";
+import { DataType } from "../../src/model";
 
-import styles from "./allComponents.module.scss";
-import DisplayResult from "./displayResult.component";
+import styles from "./searchResults.module.scss";
 
-const SearchResults = function ({ blogData }: any) {
+const SearchResults = ({ blogData }: any) => {
   return (
     <div className={styles.searchResults}>
       <div className={styles.searchResults__subHeader}>
@@ -14,7 +14,7 @@ const SearchResults = function ({ blogData }: any) {
       </div>
       <div className={styles.searchResults__results}>
         {blogData.map((data: any) => (
-          <DisplayResult key={data.id} data={data} />
+          <Result key={data.id} data={data} />
         ))}
       </div>
     </div>

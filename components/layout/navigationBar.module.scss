@@ -1,6 +1,5 @@
 .navContainer {
   width: 100%;
-  // text-transform: uppercase;
   font-family: inherit;
   display: flex;
   justify-content: space-between;
@@ -8,7 +7,6 @@
   padding: 0.5rem 5rem;
   color: black;
   background-color: white;
-  border-bottom: 0.2rem solid rgb(37, 37, 37);
 
   position: fixed;
   top: 0;
@@ -25,7 +23,6 @@
   .logo {
     width: 5rem;
     cursor: pointer;
-    // background-color: white;
   }
 
   .subNavContainer {

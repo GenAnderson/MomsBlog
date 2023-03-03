@@ -30,7 +30,7 @@ export const AuthContext = createContext({
 //   return useContext(AuthContext);
 // }
 
-export const AuthProvider = ({ children }) => {
+export const AuthProvider = ({ children }: any) => {
   // const router = useRouter();
 
   // const [username, setusername] = useState<string>();
@@ -56,7 +56,7 @@ export const AuthProvider = ({ children }) => {
   const [password, setpassword] = useState({});
   const [authenticated, setauthenticated] = useState(false);
 
-  const value = [
+  const value: any = [
     username,
     setusername,
     password,

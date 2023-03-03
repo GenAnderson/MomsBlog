@@ -1,6 +1,6 @@
 import { useInView } from "react-intersection-observer";
 
-import styles from "./allComponents.module.scss";
+import styles from "./marketing.module.scss";
 
 const Marketing: any = () => {
   const { ref: refMarketMiddle, inView: middleInView } = useInView({

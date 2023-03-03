@@ -1,5 +1,5 @@
 import Link from "next/link";
-import styles from "./allLayout.module.scss";
+import styles from "./navigationBar.module.scss";
 
 function NavigationBar() {
   return (

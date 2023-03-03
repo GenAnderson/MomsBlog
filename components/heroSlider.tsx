@@ -1,24 +1,16 @@
 import { useState, useEffect } from "react";
 
-import styles from "./allComponents.module.scss";
+import styles from "./heroSlider.module.scss";
 
 const HeroSlider = function () {
   const [slide, setSlide] = useState(0);
-
-  const imagesCompiled = [
-    "slide1.jpg",
-    "slide2.jpg",
-    "slide3.jpg",
-    // "slide4.jpg",
-    // "slide5.jpg",
-  ];
+  const imagesCompiled = ["slide1.jpg", "slide2.jpg", "slide3.jpg"];
 
   useEffect(() => {
     const timer = setInterval(
       () => setSlide((oldSlide) => (oldSlide + 1) % imagesCompiled.length),
       3000
     );
-
     return () => {
       clearInterval(timer);
     };

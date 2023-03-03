@@ -18,6 +18,7 @@ const TEMPDATA = [
     title: "What is ADHD?",
     date: "August 1, 1999",
     category: "Black",
+    blogBackground: "https://images4.alphacoders.com/788/788878.jpg",
     description:
       "Attention-deficit/hyperactivity disorder (ADHD) is one of the most common mental disorders affecting children.",
     text: "Attention-deficit/hyperactivity disorder (ADHD) is one of the most common mental disorders affecting children. Symptoms of ADHD include inattention (not being able to keep focus), hyperactivity (excess movement that is not fitting to the setting) and impulsivity (hasty acts that occur in the moment without thought). ADHD is considered a chronic and debilitating disorder and is known to impact the individual in many aspects of their life including academic and professional achievements, interpersonal relationships, and daily functioning (Harpin, 2005). ADHD can lead to poor self-esteem and social function in children when not appropriately treated (Harpin et al., 2016). Adults with ADHD may experience poor self-worth, sensitivity towards criticism, and increased self-criticism possibly stemming from higher levels of criticism throughout life (Beaton, et al., 2022). Of note, ADHD presentation and assessment in adults differs; this page focuses on children. An estimated 8.4% of children and 2.5% of adults have ADHD (Danielson, 2018; Simon, et al., 2009). ADHD is often first identified in school-aged children when it leads to disruption in the classroom or problems with schoolwork. It is more commonly diagnosed among boys than girls given differences in how the symptoms present. However, this does not mean that boys are more likely to have ADHD. Boys tend to present with hyperactivity and other externalizing symptoms whereas girls tend to have inactivity.Many children may have difficulties sitting still, waiting their turn, paying attention, being fidgety, and acting impulsively. However, children who meet diagnostic criteria for ADHD, differ in that their symptoms of hyperactivity, impulsivity, organization, and/or inattention are noticeably greater than expected for their age or developmental level. These symptoms lead to significant suffering and cause problems at home, at school or work, and in relationships. The observed symptoms are not the result of an individual being defiant or not being able to understand tasks or instructions. Many children diagnosed with ADHD will continue to meet criteria for the disorder later in life and may show impairments requiring ongoing treatment (Pliszka, 2007). However, sometimes a diagnosis of ADHD is missed during childhood. Many adults with ADHD do not realize they have the disorder. A comprehensive evaluation typically includes a review of past and current symptoms, a medical exam and history, and use of adult rating scales or checklists. Adults with ADHD are treated with medication, psychotherapy or a combination. Behavior management strategies, such as ways to minimize distractions and increase structure and organization, and support from immediate family members can also be helpful. ADHD is a protected disability under the Rehabilitation Act of 1973 and the Americans with Disabilities Act (ADA). This means that institutions receiving federal funding cannot discriminate against those with disabilities. Individuals whose symptoms of ADHD cause impairment in the work setting may qualify for reasonable work accommodations under ADA.",
@@ -64,6 +65,9 @@ export function getEventById(id) {
 
 export const uniqCategory = [
   ...new Map(
-    TEMPDATA.map((item) => [item["category"], item.category])
+    TEMPDATA.map((item) => [
+      item["category"],
+      item.category[0].toUpperCase() + item.category.slice(1),
+    ])
   ).values(),
 ];

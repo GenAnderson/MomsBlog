@@ -13,12 +13,10 @@
 ///////////////////SEARCH BLOG PAGE////////////////
 
 .blogContainer {
-  padding-top: 5rem;
+  padding: 5rem 0rem;
   height: 100vh;
   width: 100%;
   font-size: 1.8rem;
-  overflow-x: hidden;
-
   @include flexDirectionColumn();
   justify-content: flex-start;
 }
@@ -31,15 +29,14 @@
   z-index: -1;
 }
 
-.blogSearchArea {
+.blogSearchHeader {
   width: 100%;
-  height: 30rem;
+  height: 28rem;
   background-image: linear-gradient(
     to bottom right,
     rgba(49, 80, 102, 0.904),
     rgb(15, 17, 58)
   );
-
   position: relative;
   box-shadow: 0.1rem 0.2rem 0.3rem gray;
 
@@ -52,63 +49,35 @@
     position: absolute;
     top: 0;
     color: #eee;
-    text-shadow: rgb(171, 171, 172) 0.2rem 0.4rem 0.5rem;
-
+    text-shadow: rgb(13, 13, 14) 0.2rem 0.4rem 0.6rem;
     transform: translate(0%, -45%);
   }
 }
 
 .searchContainer {
-  width: 100%;
+  margin-top: 10rem;
+  margin-bottom: 10rem;
+  background-color: rgb(15, 17, 58);
+  padding: 1rem;
   @include flexDirectionColumn();
 
-  select {
-    font-size: 2rem;
-    margin: 2rem;
-    padding: 0.5rem 2rem;
-    position: absolute;
-    bottom: 0;
-    transform: translate(100%, -50%);
-  }
-
+  select,
   input {
+    font-family: inherit;
     font-size: 2rem;
     margin: 2rem;
-    padding: 0.5rem 2rem;
-    position: absolute;
-    bottom: 0;
-    transform: translate(-100%, -50%);
+    padding: 1rem 2rem;
+    z-index: 100;
   }
 }
 
 .searchResultsContainer {
-  padding-top: 5rem;
   position: relative;
-  width: 100%;
+  width: 95%;
+  // height: 100%;
+  border: solid 0.3rem black;
+  background-color: #eee;
   @include flexDirectionColumn();
-
-  &::after {
-    content: "tranquility";
-    font-family: "scriptina";
-    position: absolute;
-    bottom: 0;
-    left: 0;
-    transform: translate(-20%, 40%);
-    color: rgba(210, 217, 236, 0.205);
-    z-index: -1;
-    font-size: 25rem;
-  }
-  &::before {
-    content: "reflection";
-    font-family: "scriptina";
-    position: absolute;
-    bottom: 0;
-    right: 0;
-    transform: translate(30%, 10%);
-    color: rgba(210, 217, 236, 0.205);
-    z-index: -1;
-    font-size: 40rem;
-  }
 }
 
 ///////////////////CREATE BLOG PAGE////////////////
@@ -143,9 +112,9 @@
     margin-top: 5rem;
     // padding: 0rem 0rem 10rem 0rem;
     border-top: 0.3rem black solid;
-    border-bottom: 0.3rem black solid;
+    // border-bottom: 0.3rem black solid;
     width: 100%;
-    height: 20vh;
+    height: 25vh;
     position: relative;
     @include flexDirectionColumn();
 
@@ -159,20 +128,26 @@
     }
     :nth-child(2),
     :nth-child(3) {
-      font-size: 1.6rem;
+      font-size: 2rem;
     }
   }
 
   &__headerTextContainer {
+    font-family: "Poppins";
     width: 100%;
     position: absolute;
-    top: 0;
+    top: 50%;
     left: 0;
+    transform: translate(0%, -50%);
     text-align: center;
+    background-color: rgba(255, 255, 255, 0.377);
+    padding-top: 5rem;
+    padding-bottom: 5rem;
+    font-weight: bold;
   }
   &__background {
     width: 100%;
-    height: 20vh;
+    height: 100%;
     object-fit: cover;
     position: absolute;
     top: 0;
@@ -201,5 +176,6 @@
   }
   &__text {
     text-align: justify;
+    margin-block-start: 0em;
   }
 }

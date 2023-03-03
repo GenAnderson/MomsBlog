@@ -1,15 +1,18 @@
 import Link from "next/link";
 import LoginBox from "./loginBox";
-import React, { useState } from "react";
+
+import React from "react";
+import { useState } from "react";
 import { useRef } from "react";
 
 import emailjs from "@emailjs/browser";
 
-import styles from "./allComponents.module.scss";
+import styles from "./footer.module.scss";
+
 const Footer = function () {
   const [openLogin, setOpenLogin] = useState(false);
 
-  const form = useRef();
+  const form: any = useRef();
 
   const sendEmail = (event: any) => {
     event.preventDefault();
@@ -61,7 +64,6 @@ const Footer = function () {
               <div>{openLogin && <LoginBox />}</div>
             </div>
           </div>
-          <p className={styles.copyright}>GenAnderson©️2023</p>
         </ul>
       </div>
     </div>

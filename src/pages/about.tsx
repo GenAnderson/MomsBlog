@@ -1,5 +1,5 @@
 import styles from "./index.module.scss";
-import Footer from "../../components/footer";
+import Footer from "../../components/footer/footer";
 
 function Aboutme() {
   return (
