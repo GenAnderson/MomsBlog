@@ -2,7 +2,7 @@ const TEMPDATA = [
   {
     id: 1,
     title: "If you give a mouse a cookie",
-    date: "February 15, 2020",
+    date: "November 15, 2021",
     category: "white",
     blogBackground:
       "https://images.unsplash.com/photo-1634188023730-2a607e9c27a2?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=1172&q=80",
@@ -16,7 +16,7 @@ const TEMPDATA = [
   {
     id: 2,
     title: "What is ADHD?",
-    date: "August 1, 1999",
+    date: "August 1, 2021",
     category: "Black",
     blogBackground: "https://images4.alphacoders.com/788/788878.jpg",
     description:

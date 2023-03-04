@@ -3,7 +3,7 @@ import Footer from "../../components/footer/footer";
 
 function Aboutme() {
   return (
-    <>
+    <div className={styles.pageFlexContainer}>
       <div className={styles.aboutContainer}>
         <img src="about.jpg" className={styles.aboutPhoto} />
         <div className={styles.aboutTextBox}>
@@ -67,7 +67,7 @@ function Aboutme() {
         </div>
       </div>
       <Footer />
-    </>
+    </div>
   );
 }
 

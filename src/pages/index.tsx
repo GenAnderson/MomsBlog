@@ -1,19 +1,18 @@
 import type { NextPage } from "next";
 import { trpc } from "../utils/trpc";
 import { signIn, signOut, useSession } from "next-auth/react";
+import Link from "next/link";
 
 import Head from "next/head";
 import Footer from "../../components/footer/footer";
 import HeroSlider from "../../components/heroSlider";
 import Marketing from "../../components/marketing";
-
+import { findLatestBlog } from "../controller";
 
 import styles from "./index.module.scss";
 
 const Home: NextPage = () => {
   const { data } = trpc.example.hello.useQuery({ text: "from tRPC" });
-
-
 
   return (
     <>
@@ -38,9 +37,7 @@ const Home: NextPage = () => {
                 inventore porro officia in dicta molestiae voluptatum. Dicta
               </p>
               <button>
-                <a href={""} target="_blank" rel="noreferrer">
-                  Latest Blog →
-                </a>
+                <Link href={`blogs/${findLatestBlog()}`}>Latest Blog →</Link>
               </button>
             </div>
           </div>

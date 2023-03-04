@@ -121,6 +121,12 @@
 
 ///////////////////ABOUT PAGE////////////////
 
+.pageFlexContainer {
+  height: 100vh;
+  display: flex;
+  flex-direction: column;
+}
+
 .aboutContainer {
   max-width: 200rem;
   padding: 10rem 5rem;
@@ -128,7 +134,7 @@
   grid-template-columns: auto auto;
   margin: auto;
   font-size: 1.6rem;
-  background-color: rgb(207, 238, 243);
+  background-color: rgb(221, 230, 230);
 }
 
 .aboutPhoto {

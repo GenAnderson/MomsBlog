@@ -1,5 +1,6 @@
 import Link from "next/link";
 import LoginBox from "./loginBox";
+import { findLatestBlog } from "../../src/controller";
 
 import React from "react";
 import { useState } from "react";
@@ -56,7 +57,7 @@ const Footer = function () {
         <ul className={styles.footer__links}>
           <div className={styles.separateContainer}>
             <li>
-              <Link href="">Latest blog →</Link>
+              <Link href={`blogs/${findLatestBlog()}`}>Latest blog →</Link>
             </li>
 
             <div>

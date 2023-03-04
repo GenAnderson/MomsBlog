@@ -1,5 +1,4 @@
 import Result from "./displayResult.component";
-import { DataType } from "../../src/model";
 
 import styles from "./searchResults.module.scss";
 
