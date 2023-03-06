@@ -10,6 +10,8 @@ function ViewBlog() {
   const id = router.query.id;
   const event: any = getEventById(id);
 
+  console.log(event);
+
   // const {
   //   title: title,
   //   category: category,

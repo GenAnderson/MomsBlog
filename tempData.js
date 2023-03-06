@@ -32,26 +32,38 @@ const TEMPDATA = [
     title: "Doodle doodle dee",
     date: "December 18, 2005",
     category: "green",
+    blogBackground:
+      "https://images.unsplash.com/photo-1585217514204-d025f2f1b116?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=1742&q=80",
     description:
       "event - compiled client and server successfully in 662 ms (366 modules)",
+    image1: "",
+    image2: "",
   },
   {
     id: 4,
     title: "What is this and that and that?",
     date: "October 5, 2018",
     category: "green",
+    blogBackground:
+      "https://images.unsplash.com/photo-1677166869710-3a030637ecb3?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=1829&q=80",
     description:
       "blah blah blhasdfasfjewpofrjewpfrkemw kferdf dsfdw asdfdsgetegegf",
+    image1: "",
+    image2: "",
   },
   {
     id: 5,
     title: "Get a Unique List of Objects in an Array of Object in JavaScript",
     date: "March 17, 2003",
     category: "Purple",
+    blogBackground:
+      "https://images.unsplash.com/photo-1677703758826-4c0658c0bb6e?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=1748&q=80",
     description: "Blah don't know what to put here but lalalalalala",
     text: "Recently, I needed a way to ensure that my JavaScript array of objects does not contain any duplicate objects based on an ‘id’ key. While I do enjoy more common approaches to this solution with the use of a simple ‘for’ loop it is always a bit of fun to see how folks have come up with modern solutions.",
     image:
       "https://yagisanatode.com/wp-content/uploads/2021/07/get-a-unique-list-of-objects-in-an-array-of-objects-in-javascript-1200x675.jpg?ezimgfmt=ng%3Awebp%2Fngcb2%2Frs%3Adevice%2Frscb2-1",
+    image1: "",
+    image2: "",
   },
 ];
 
