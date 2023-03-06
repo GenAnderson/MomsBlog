@@ -10,45 +10,35 @@ function ViewBlog() {
   const id = router.query.id;
   const event: any = getEventById(id);
 
-  console.log(event);
-
-  // const {
-  //   title: title,
-  //   category: category,
-  //   blogBackground: blogBackground,
-  //   date: date,
-  //   text: text,
-  //   image1: image1,
-  //   image2: image2,
-  // }: blogProperties = event;
+  const {
+    title: title,
+    category: category,
+    blogBackground: blogBackground,
+    date: date,
+    text: text,
+    image1: image1,
+    image2: image2,
+  }: blogProperties = event;
 
   return (
     <div>
       <div className={styles.viewBlogContainer}>
         <div className={styles.viewBlog__header}>
-          {/* <img
+          <img
             className={styles.viewBlog__background}
-            src={event.blogBackground}
+            src={blogBackground}
             alt={`${styles.title} background`}
-          ></img> */}
+          ></img>
           <div className={styles.viewBlog__headerTextContainer}>
-            <p>{event.title}</p>
-            <p>{event.date}</p>
-            <p>Category: {event.category}</p>
+            <p>{title}</p>
+            <p>{date}</p>
+            <p>Category: {category}</p>
           </div>
         </div>
         <div className={styles.viewBlog__body}>
-          <img
-            className={styles.image1}
-            src={event.image1}
-            alt={styles.title}
-          ></img>
-          <img
-            className={styles.image2}
-            src={event.image2}
-            alt={styles.title}
-          ></img>
-          <p className={styles.viewBlog__text}>{event.text}</p>
+          <img className={styles.image1} src={image1} alt={styles.title}></img>
+          <img className={styles.image2} src={image2} alt={styles.title}></img>
+          <p className={styles.viewBlog__text}>{text}</p>
         </div>
       </div>
     </div>
