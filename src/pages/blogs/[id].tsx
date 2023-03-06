@@ -11,13 +11,13 @@ function ViewBlog() {
   const event: any = getEventById(id);
 
   const {
-    title,
-    category,
-    blogBackground,
-    date,
-    text,
-    image1,
-    image2,
+    title: title,
+    category: category,
+    blogBackground: blogBackground,
+    date: date,
+    text: text,
+    image1: image1,
+    image2: image2,
   }: blogProperties = event;
 
   return (
