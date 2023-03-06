@@ -26,11 +26,11 @@ function ViewBlog() {
     <div>
       <div className={styles.viewBlogContainer}>
         <div className={styles.viewBlog__header}>
-          <img
+          {/* <img
             className={styles.viewBlog__background}
             src={event.blogBackground}
             alt={`${styles.title} background`}
-          ></img>
+          ></img> */}
           <div className={styles.viewBlog__headerTextContainer}>
             <p>{event.title}</p>
             <p>{event.date}</p>
