@@ -1,5 +1,6 @@
 import { useRouter } from "next/router";
-import { getEventById } from "../../../tempData";
+// import { getEventById } from "../../../tempData";
+import TEMPDATA from "../../../tempData";
 
 import { blogProperties } from "../../model";
 
@@ -8,7 +9,12 @@ import styles from "./blogs.module.scss";
 function ViewBlog() {
   const router = useRouter();
   const id = router.query.id;
-  const event: any = getEventById(id);
+
+  function getBlogById(id: any) {
+    return TEMPDATA.find((event) => event.id === +id);
+  }
+
+  const blog: any = getBlogById(id);
 
   const {
     title: title,
@@ -18,7 +24,7 @@ function ViewBlog() {
     text: text,
     image1: image1,
     image2: image2,
-  }: blogProperties = event;
+  }: blogProperties = blog;
 
   return (
     <div>
