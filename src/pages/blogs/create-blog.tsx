@@ -1,9 +1,9 @@
 import styles from "./blogs.module.scss";
 
 function createBlog() {
-  let curr = new Date();
+  const curr = new Date();
   curr.setDate(curr.getDate());
-  let date = curr.toISOString().substring(0, 10);
+  const date = curr.toISOString().substring(0, 10);
 
   const handleDateClick = function (event: any) {
     console.log(event.target.value);

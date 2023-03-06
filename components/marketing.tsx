@@ -34,7 +34,7 @@ const Marketing: any = () => {
           <img src="./flower4.jpg" className={styles.marketingImg} />
           <div>
             <p className={styles.miniHeader}>
-              <em>Aloha, I'm Lujean</em>
+              <em>Aloha, Im Lujean</em>
             </p>
             <p>
               Lorem ipsum dolor sit amet, consectetur adipisicing elit. Dolorum,

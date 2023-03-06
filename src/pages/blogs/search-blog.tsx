@@ -4,7 +4,7 @@ import TEMPDATA, { uniqCategory } from "../../../tempData";
 
 import styles from "./blogs.module.scss";
 
-function searchBlog() {
+function SearchBlog() {
   const [selectCategoryState, setCategoryState] = useState("");
   const [typeTitleState, setTitleState] = useState("");
   const [blogData, setBlogData] = useState(TEMPDATA);
@@ -97,4 +97,4 @@ function searchBlog() {
   );
 }
 
-export default searchBlog;
+export default SearchBlog;
