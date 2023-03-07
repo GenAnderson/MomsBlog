@@ -24,6 +24,7 @@ const HeroSlider = function () {
           key={index}
           className={styles.welcome__slide}
           style={index === slide ? { opacity: 1 } : { opacity: 0 }}
+          alt={`slide #${index}`}
         />
       ))}
     </div>

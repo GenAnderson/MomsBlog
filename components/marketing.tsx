@@ -1,8 +1,9 @@
 import { useInView } from "react-intersection-observer";
+import Image from "next/image";
 
 import styles from "./marketing.module.scss";
 
-const Marketing: any = () => {
+const Marketing = () => {
   const { ref: refMarketMiddle, inView: middleInView } = useInView({
     triggerOnce: true,
   });
@@ -31,7 +32,14 @@ const Marketing: any = () => {
     <div className={styles.marketingContainer}>
       <div className={styles.controlledVHcontainer}>
         <div className={styles.marketingTextBox}>
-          <img src="./flower4.jpg" className={styles.marketingImg} />
+          <Image
+            src="/flower4.jpg"
+            className={styles.marketingImg}
+            width="700"
+            height="800"
+            objectFit="cover"
+            alt="blue single flower"
+          />
           <div>
             <p className={styles.miniHeader}>
               <em>Aloha, Im Lujean</em>
@@ -74,10 +82,13 @@ const Marketing: any = () => {
             market1InView ? styles.market1 : ""
           }`}
         >
-          <img
-            src="./icon_listen.png"
+          <Image
+            src="/icon_listen.png"
             className={styles.marketIcons}
             alt="listen icon"
+            width="50rem"
+            height="50rem"
+            objectFit="contain"
           />
           Building rapport through listening for understanding and validation
         </div>
@@ -87,10 +98,13 @@ const Marketing: any = () => {
             market2InView ? styles.market2 : ""
           }`}
         >
-          <img
-            src="./icon_cognitive.png"
+          <Image
+            src="/icon_cognitive.png"
             className={styles.marketIcons}
             alt="cognitive icon"
+            width="50rem"
+            height="50rem"
+            objectFit="contain"
           />
           Cognitive Behavioral Therapy to identify and modify thinking errors.
         </div>
@@ -100,10 +114,13 @@ const Marketing: any = () => {
             market3InView ? styles.market3 : ""
           }`}
         >
-          <img
-            src="./icon_interview.png"
+          <Image
+            src="/icon_interview.png"
             className={styles.marketIcons}
             alt="interview icon"
+            width="50rem"
+            height="50rem"
+            objectFit="contain"
           />
           Solution Focused Interviewing
         </div>
@@ -113,10 +130,13 @@ const Marketing: any = () => {
             market4InView ? styles.market4 : ""
           }`}
         >
-          <img
-            src="./icon_support.png"
+          <Image
+            src="/icon_support.png"
             className={styles.marketIcons}
             alt="support icon"
+            width="50rem"
+            height="50rem"
+            objectFit="contain"
           />
           Strength Based Therapy to identify strengths and support systems
           clients already have.
@@ -127,10 +147,13 @@ const Marketing: any = () => {
             market5InView ? styles.market5 : ""
           }`}
         >
-          <img
-            src="./icon_confidence.png"
+          <Image
+            src="/icon_confidence.png"
             className={styles.marketIcons}
             alt="confidence icon"
+            width="50rem"
+            height="50rem"
+            objectFit="contain"
           />
           Assertiveness Training to build self-confidence and problem-solving
           skills.

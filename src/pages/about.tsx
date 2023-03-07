@@ -1,11 +1,21 @@
-import styles from "./index.module.scss";
+import Image from "next/image";
+
 import Footer from "../../components/footer/footer";
+
+import styles from "./index.module.scss";
 
 function Aboutme() {
   return (
     <div className={styles.pageFlexContainer}>
       <div className={styles.aboutContainer}>
-        <img src="about.jpg" className={styles.aboutPhoto} />
+        <Image
+          src="/about.jpg"
+          className={styles.aboutPhoto}
+          alt="LuJean Anderson"
+          width="600rem"
+          height="800rem"
+          objectFit="cover"
+        />
         <div className={styles.aboutTextBox}>
           <p className={styles.aboutTextBox__header}>
             Lujean R. Marshall, LCSW

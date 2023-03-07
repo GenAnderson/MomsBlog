@@ -3,23 +3,14 @@ import styles from "./footer.module.scss";
 import { useState } from "react";
 import { useRouter } from "next/router";
 
-import { useContext } from "react";
-import { AuthContext } from "../../src/context";
+// import { useContext } from "react";
+// import { AuthContext } from "../../src/context";
 
 function LoginBox() {
   const router = useRouter();
 
-  // const {
-  //   username,
-  //   setusername,
-  //   password,
-  //   setpassword,
-  //   authenticated,
-  //   setauthenticated,
-  // } = useContext(AuthContext);
-
-  const [username, setusername] = useState();
-  const [password, setpassword] = useState();
+  const [username, setusername] = useState("");
+  const [password, setpassword] = useState("");
   // const [authenticated, setauthenticated] = useState(
   //   false
   //   // localStorage.getItem(localStorage.getItem("authenticated" || false))
@@ -29,13 +20,14 @@ function LoginBox() {
 
   // Doesn't accept if it's prefilled? Its undefined
 
-  const handleLoginName = (e: any) => {
+  const handleLoginName = (e: React.ChangeEvent<HTMLInputElement>) => {
     setusername(e.target.value);
   };
 
-  const handlePassword = (e: any) => setpassword(e.target.value);
+  const handlePassword = (e: React.ChangeEvent<HTMLInputElement>) =>
+    setpassword(e.target.value);
 
-  const handleSubmit = (event: any) => {
+  const handleSubmit = (event: React.SyntheticEvent) => {
     event.preventDefault();
     const account = users.find((user) => user.username === username);
 

@@ -1,4 +1,7 @@
 import Link from "next/link";
+
+import Image from "next/image";
+
 import styles from "./navigationBar.module.scss";
 
 function NavigationBar() {
@@ -8,10 +11,13 @@ function NavigationBar() {
         <div className={styles.logoContainer}>
           <li className={styles.navLink}>
             <Link href="/">
-              <img
-                src="../logo.png"
+              <Image
+                src="/logo.png"
                 alt="default logo"
                 className={styles.logo}
+                width="75rem"
+                height="50rem"
+                objectFit="contain"
               />
             </Link>
           </li>

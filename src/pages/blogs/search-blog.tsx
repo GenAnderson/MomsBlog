@@ -1,4 +1,5 @@
 import { useState, useEffect } from "react";
+
 import SearchResults from "../../../components/blog-components/searchResults.component";
 import TEMPDATA, { uniqCategory } from "../../../tempData";
 
@@ -25,7 +26,7 @@ function SearchBlog() {
   useEffect(() => {
     // filter category only
     if (!typeTitleState && selectCategoryState) {
-      const newFilteredCategory = blogData.filter((blog: any) => {
+      const newFilteredCategory = blogData.filter((blog) => {
         return blog.category.toLowerCase().includes(selectCategoryState);
       });
       setFilteredBlog(newFilteredCategory);
@@ -38,7 +39,7 @@ function SearchBlog() {
 
     // filter category and title
     if (selectCategoryState !== "category" && typeTitleState) {
-      const filteredCatforTitle = blogData.filter((blog: any) => {
+      const filteredCatforTitle = blogData.filter((blog) => {
         return blog.category.toLowerCase().includes(selectCategoryState);
       });
       const newFilterCatWithTitle = filteredCatforTitle.filter((blog) => {
@@ -49,7 +50,7 @@ function SearchBlog() {
 
     // filter title only
     if (typeTitleState && selectCategoryState === "category") {
-      const newFilteredTitle = blogData.filter((blog: any) => {
+      const newFilteredTitle = blogData.filter((blog) => {
         return blog.title.toLocaleLowerCase().includes(typeTitleState);
       });
       setFilteredBlog(newFilteredTitle);
@@ -60,7 +61,11 @@ function SearchBlog() {
     <div className={styles.blogContainer}>
       <div className={styles.blogSearchHeader}>
         <div>
-          <img src="../book.png" className={styles.blogSearchImage} />
+          <img
+            src="/book.png"
+            className={styles.blogSearchImage}
+            alt="faint book outline"
+          />
           <h1>Blog search</h1>
         </div>
       </div>
@@ -91,7 +96,7 @@ function SearchBlog() {
       </div>
 
       <div className={styles.searchResultsContainer}>
-        <SearchResults blogData={filteredBlog} />
+        <SearchResults resultingBlogs={filteredBlog} />
       </div>
     </div>
   );

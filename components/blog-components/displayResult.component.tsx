@@ -1,25 +1,30 @@
 import { Fragment } from "react";
 import Link from "next/link";
-import { DataType } from "../../src/model";
 
-const Result = ({ data }: DataType) => {
-  console.log("(data)from Resultscomponent:", data);
+interface blogProps {
+  id: number;
+  title: string;
+  category: string;
+  date: string;
+  description: string;
+}
+
+const Result = ({ id, title, category, date, description }: blogProps) => {
   return (
-    <Fragment key={data.id}>
+    <Fragment key={id}>
       <strong>
         <Link
           href={{
-            pathname: `${data.id}`,
+            pathname: `${id}`,
           }}
-          // data={data}
         >
-          <a>{data.title}</a>
+          <a>{title}</a>
         </Link>
       </strong>
 
-      <div>{data.category}</div>
-      <div>{data.date}</div>
-      <div>{data.description}</div>
+      <div>{category}</div>
+      <div>{date}</div>
+      <div>{description}</div>
     </Fragment>
   );
 };

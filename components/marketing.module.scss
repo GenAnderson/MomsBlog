@@ -28,9 +28,6 @@
   @include flexDirectionRegular();
 }
 
-.marketingImg {
-  width: 35rem;
-}
 .miniHeader {
   font-size: 3rem;
   color: #777;
@@ -116,7 +113,8 @@
   @include flexDirectionColumn();
   width: 30rem;
   height: 30rem;
-  padding: 5rem;
+  padding: 4rem;
+  gap: 1rem;
   color: white;
   background-image: linear-gradient(
     to bottom,

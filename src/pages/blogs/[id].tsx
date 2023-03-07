@@ -1,30 +1,22 @@
 import { useRouter } from "next/router";
+import Image from "next/image";
+
 // import { getEventById } from "../../../tempData";
 import TEMPDATA from "../../../tempData";
 
-import { blogProperties } from "../../model";
-
 import styles from "./blogs.module.scss";
 
-function ViewBlog() {
+const ViewBlog = () => {
   const router = useRouter();
-  const id = router.query.id;
+  const id = Number(router.query.id);
 
-  function getBlogById(id: any) {
-    return TEMPDATA.find((event) => event.id === +id);
+  function getBlogById(id: number) {
+    return TEMPDATA.find((event) => event.id === id);
   }
 
-  const blog: any = getBlogById(id);
+  const blog = getBlogById(id);
 
-  const {
-    title: title,
-    category: category,
-    blogBackground: blogBackground,
-    date: date,
-    text: text,
-    image1: image1,
-    image2: image2,
-  }: blogProperties = blog;
+  if (blog === undefined) return;
 
   return (
     <div>
@@ -32,23 +24,31 @@ function ViewBlog() {
         <div className={styles.viewBlog__header}>
           <img
             className={styles.viewBlog__background}
-            src={blogBackground}
+            src={blog.blogBackground}
             alt={`${styles.title} background`}
           ></img>
           <div className={styles.viewBlog__headerTextContainer}>
-            <p>{title}</p>
-            <p>{date}</p>
-            <p>Category: {category}</p>
+            <p>{blog.title}</p>
+            <p>{blog.date}</p>
+            <p>Category: {blog.category}</p>
           </div>
         </div>
         <div className={styles.viewBlog__body}>
-          <img className={styles.image1} src={image1} alt={styles.title}></img>
-          <img className={styles.image2} src={image2} alt={styles.title}></img>
-          <p className={styles.viewBlog__text}>{text}</p>
+          <img
+            className={styles.image1}
+            src={blog.image1}
+            alt={styles.title}
+          ></img>
+          <img
+            className={styles.image2}
+            src={blog.image2}
+            alt={styles.title}
+          ></img>
+          <p className={styles.viewBlog__text}>{blog.text}</p>
         </div>
       </div>
     </div>
   );
-}
+};
 
 export default ViewBlog;

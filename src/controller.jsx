@@ -3,7 +3,7 @@ import TEMPDATA from "../tempData";
 export const findLatestBlog = () => {
   // Change date format with date constructor
   let newArr = [];
-  const newDates = TEMPDATA.map((blog) =>
+  TEMPDATA.map((blog) =>
     newArr.push({ id: blog.id, date: new Date(blog.date) })
   );
 
