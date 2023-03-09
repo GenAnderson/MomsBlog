@@ -1,3 +1,22 @@
 .adminNav__container {
-  width: 50rem;
+  width: 25rem;
+  font-size: 2rem;
+  border-right: #222 solid 0.2rem;
+  background-color: #ddd;
+  box-shadow: 0.2rem 0.3rem 0.5rem #222;
+  padding-top: 10rem;
+  font-weight: 600;
+  height: 100%;
+
+  p {
+    padding: 1rem 2rem;
+    color: #222;
+  }
+}
+
+.adminNav__title {
+  font-size: 2.5rem;
+  font-weight: 900;
+  text-transform: uppercase;
+  border-bottom: #222 solid 0.2rem;
 }

@@ -3,7 +3,7 @@ import styles from "./adminNav.module.scss";
 const AdminNav = () => {
   return (
     <div className={styles.adminNav__container}>
-      <p>Admin Tools</p>
+      <p className={styles.adminNav__title}>Admin Tools</p>
       <p>Delete Blog</p>
       <p>Create Blog</p>
       <p>Upload Document</p>
