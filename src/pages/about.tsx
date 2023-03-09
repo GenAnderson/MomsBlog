@@ -6,16 +6,17 @@ import styles from "./index.module.scss";
 
 function Aboutme() {
   return (
-    <div className={styles.pageFlexContainer}>
+    <div className={styles.aboutPageFlexContainer}>
       <div className={styles.aboutContainer}>
-        <Image
-          src="/about.jpg"
-          className={styles.aboutPhoto}
-          alt="LuJean Anderson"
-          width="600rem"
-          height="800rem"
-          objectFit="cover"
-        />
+        <div className={styles.imageContainer}>
+          <Image
+            src="/about.jpg"
+            className={styles.aboutPhoto}
+            alt="LuJean Anderson"
+            layout="fill"
+            objectFit="cover"
+          />
+        </div>
         <div className={styles.aboutTextBox}>
           <p className={styles.aboutTextBox__header}>
             Lujean R. Marshall, LCSW

@@ -82,23 +82,67 @@
 
 ///////////////////CREATE BLOG PAGE////////////////
 .createBlogContainer {
-  padding: 5rem;
+  padding: 10rem 5rem 5rem 5rem;
+  background-color: #6e828b;
+  height: 100vh;
+  display: flex;
+  // align-self: baseline;
 }
 
 .createBlog {
+  &__formFlexContainer {
+    display: flex;
+    justify-content: space-evenly;
+  }
+
   &__form {
-    text-align: center;
+    max-width: 200rem;
+    height: 100%;
+    margin: auto;
+
     input {
       padding: 0.5rem;
       font-size: 2rem;
-      margin: 1.5rem;
+      width: 100%;
+    }
+    label {
+      font-size: 2rem;
+      color: white;
     }
   }
+
+  &__inputContainer {
+    margin: 2rem 1rem;
+  }
   &__input__textArea {
-    width: 100rem;
-    height: 80rem;
+    font-family: inherit;
+    width: 120rem;
+    height: 100%;
     font-size: 2rem;
   }
+  &__submitBtn {
+    font-size: 2rem;
+    font-weight: bold;
+    background-color: white;
+    color: rgb(1, 1, 65);
+    padding: 1rem 2rem;
+    border: 0.1rem rgb(1, 1, 65) solid;
+    border-radius: 1rem;
+    margin-top: 2rem;
+
+    &:hover {
+      background-color: rgb(1, 1, 65);
+      color: white;
+      cursor: pointer;
+      border: 0.1rem white solid;
+      transition: ease 0.2s;
+    }
+  }
+}
+
+.createBlog__btnContainer {
+  display: flex;
+  justify-content: space-between;
 }
 
 ///////////////////ACTUAL BLOG PAGE////////////////
